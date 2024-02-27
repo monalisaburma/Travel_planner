@@ -13,7 +13,7 @@ def generate_itinerary(destinations, number_of_nights, trip_type):
     trip_prompt = prompt_template.format(trip_type=trip_type, destinations=destinations, nights=number_of_nights)
     st.markdown(f'<p style=\'font-family: "Times New Roman", sans-serif; font-size: 18px; color: #000;\'>{trip_prompt}</p>', unsafe_allow_html=True)
     
-    llm = OpenAI(openai_api_key="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", temperature=0.9, max_tokens=3500)
+    llm = OpenAI(openai_api_key="OPENAI_API_KEY", temperature=0.9, max_tokens=3500)
     result = llm(trip_prompt)
 
     return result
