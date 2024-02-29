@@ -5,6 +5,14 @@ JourneyGenius is a Streamlit-based travel planner app that generates daywise det
 ![JourneyGenius](https://github.com/monalisaburma/Travel_planner/assets/122416015/8e949eb9-9295-4b1d-92a0-3f480eb02e61)
 
 
+
+## Project Structure
+
+- `.streamlit`: Configuration folder for Streamlit.
+- `journeygenius.py`: Main script containing the Streamlit app code.
+- `requirements.txt`: List of Python dependencies for the project.
+
+
 ### Installation
 
 1. Clone the repository:
@@ -47,14 +55,6 @@ JourneyGenius is a Streamlit-based travel planner app that generates daywise det
 ### Ready to plan your next adventure?
 
 Try JourneyGenius now! [JourneyGenius App](https://travelplan-journeygenius.streamlit.app)
-
-
-## Project Structure
-
-- `.streamlit`: Configuration folder for Streamlit.
-- `journeygenius.py`: Main script containing the Streamlit app code.
-- `requirements.txt`: List of Python dependencies for the project.
-
 
 
 ## License
