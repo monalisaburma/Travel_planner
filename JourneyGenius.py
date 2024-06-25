@@ -6,17 +6,30 @@ Created on Tue Nov 21 17:52:46 2023
 """
 
 import streamlit as st
-from langchain.llms import OpenAI
+import openai
+
+openai.api_key = "YOUR_OPENAI_API_KEY"
+
 
 def generate_itinerary(destinations, number_of_nights, trip_type):
     prompt_template = "Generate a daywise detailed itinerary with specific place names for a {trip_type} trip to {destinations} for {nights} nights."
     trip_prompt = prompt_template.format(trip_type=trip_type, destinations=destinations, nights=number_of_nights)
+   
     st.markdown(f'<p style=\'font-family: "Times New Roman", sans-serif; font-size: 18px; color: #000;\'>{trip_prompt}</p>', unsafe_allow_html=True)
     
-    llm = OpenAI(openai_api_key="OPENAI_API_KEY", temperature=0.9, max_tokens=3500)
-    result = llm(trip_prompt)
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are a helpful travel assistant."},
+            {"role": "user", "content": trip_prompt}
+        ],
+        max_tokens=3500,
+        temperature=0.9
+    )
 
+    result = response['choices'][0]['message']['content']
     return result
+
 
 def main():
     # Set page configuration for better responsiveness
@@ -122,6 +135,7 @@ def main():
     if st.button("Generate Itinerary"):
         itinerary = generate_itinerary(destinations, number_of_nights, trip_type)
         st.markdown(itinerary)
+
 
 if __name__ == "__main__":
     main()
