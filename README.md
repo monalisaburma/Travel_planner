@@ -16,8 +16,9 @@ JourneyGenius is a Streamlit-based travel planner app that generates daywise det
 ## 💻 Technologies Used:
 
 - [Streamlit](https://streamlit.io/): For creating interactive web applications with Python.
-- [LangChain](https://langchain.ai/): Leveraging advanced language models for intelligent text generation.
-- [OpenAI GPT-3](https://openai.com/): Powering natural language understanding and text generation.
+- [LangChain](https://python.langchain.com/): For leveraging advanced language models for intelligent text generation.
+- [OpenAI GPT-3.5 Turbo](https://openai.com/): Powering natural language understanding and text generation.
+
   
 
 ### Installation
